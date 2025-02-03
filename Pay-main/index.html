@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saint Louis Bida Portal - Payment Form</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div class="header">
+      <img src="Bida2.png" alt="Saint Louis Bida Logo" />
+      <h1>St Louis Bida Portal</h1>
+    </div>
+
+    <form id="paymentForm">
+      <!-- <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email-address" required />
+      </div> -->
+      <div class="form-group">
+        <label for="student-name">Full Name of Student</label>
+        <input type="text" id="student-name" required />
+      </div>
+      <div class="form-group">
+        <label for="class">Class</label>
+        <select id="class" required onchange="updateAmount()">
+          <option value="">Select Class</option>
+          <option value="nur1">Nursery 1</option>
+          <option value="nur2">Nursery 2</option>
+          <option value="pry1">Primary 1</option>
+          <option value="pry2">Primary 2</option>
+          <option value="pry3">Primary 3</option>
+          <option value="pry4">Primary 4</option>
+          <option value="pry5">Primary 5</option>
+          <option value="pry6">Primary 6</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="term">Term</label>
+        <select id="term" required>
+          <option value="">Select Term</option>
+          <option value="first">First Term</option>
+          <option value="second">Second Term</option>
+          <option value="third">Third Term</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="payment-type">Payment Type</label>
+        <select id="payment-type" required onchange="updateAmount()">
+          <option value="">Select Payment Type</option>
+          <option value="full">Full Payment</option>
+          <option value="half">Half Payment</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount (NGN)</label>
+        <input type="text" id="amount" readonly />
+      </div>
+      <div class="form-submit">
+        <button type="submit">Pay Now</button>
+      </div>
+    </form>
+
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="js/payment.js"></script>
+  </body>
+</html>

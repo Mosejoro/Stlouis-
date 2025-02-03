@@ -1,0 +1,74 @@
+@font-face {
+  font-family: Sassoon;
+  src: url(../Fonts/Sassoon-Primary.otf);
+}
+* {
+  font-family: Sassoon, Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+}
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+.Head {
+  text-align: center;
+}
+.Head img {
+  width: 8rem;
+}
+.gallery-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.tab-btn {
+  background-color: #f0f0f0;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.tab-btn.active {
+  background-color: #007bff;
+  color: white;
+}
+.gallery-content {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.image-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.image-item:hover {
+  transform: scale(1.05);
+}
+.image-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.gallery-section {
+  display: none;
+}
+.gallery-section.active {
+  display: block;
+}

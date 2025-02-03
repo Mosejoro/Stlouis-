@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You - Saint Louis Bida Portal</title>
+    <style>
+      :root {
+        --primary-color: #83c9f2;
+        --secondary-color: #f2e01d;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #83c9f2;
+        text-align: center;
+      }
+
+      .thank-you-container {
+        max-width: 600px;
+        margin: 50px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .thank-you-container img {
+        width: 4rem;
+      }
+      h1 {
+        color: var(--primary-color);
+      }
+
+      .reference {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 4px;
+        margin: 20px 0;
+        font-size: 18px;
+      }
+
+      .important-note {
+        color: #dc3545;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      .print-button {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+
+      .print-button:hover {
+        background-color: var(--secondary-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="thank-you-container">
+      <img src="Bida2.png" alt="Saint Louis Bida Logo" />
+      <h1>Thank You for Your Payment!</h1>
+      <p>Your payment has been successfully processed.</p>
+
+      <div class="reference">
+        <p>Your Reference Number is:</p>
+        <h2 id="referenceNumber"></h2>
+      </div>
+
+      <p class="important-note">
+        Please keep this reference number for your records.
+      </p>
+
+      <button class="print-button" onclick="window.print()">
+        Print Receipt
+      </button>
+    </div>
+
+    <script>
+      // Get reference from URL parameters
+      window.onload = function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const reference = urlParams.get("ref");
+        document.getElementById("referenceNumber").textContent = reference;
+      };
+    </script>
+  </body>
+</html>
