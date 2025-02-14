@@ -5,6 +5,13 @@
   list-style: none;
   text-decoration: none;
 }
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --bg-color: #f4f6f7;
+  --text-color: #333;
+  --white: #ffffff;
+}
 @font-face {
   font-family: Sassoon;
   src: url(../Fonts/Sassoon-Primary.otf);
@@ -66,21 +73,297 @@ h6 {
   }
 }
 /* PRE_Loader */
-nav {
-  background-color: #83c9f2;
+/* Header */
+.topbar {
+  background-color: var(--white);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  font-family: Segoe UI;
 }
-.brand img {
-  width: 4rem;
+
+.shell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  font-family: Segoe UI;
+  margin: 0 auto;
+  padding: 1rem;
 }
-.nav-link,
-.dropdown-item {
-  font-size: 1rem;
+
+.identity img {
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.identity img:hover {
+  transform: scale(1.05);
+}
+
+.realm {
+  display: flex;
+  font-family: Segoe UI;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 10rem;
+}
+
+.pathways {
+  display: flex;
+  align-items: center;
+  font-family: Segoe UI;
+  gap: 1.5rem;
+  justify-content: center;
+  padding-top: 1rem;
+}
+.way {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.route {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: Segoe UI;
   font-weight: 600;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: var(--primary-color);
+  position: relative;
+  transition: color 0.3s ease;
 }
-.dropdown-item {
-  padding-bottom: 20px;
+
+.route::after {
+  content: "";
+  position: absolute;
+  text-decoration: none;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
 }
+
+.route:hover {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.route:hover::after {
+  width: 100%;
+  text-decoration: none;
+}
+
+.cascade {
+  position: relative;
+}
+
+.waterfall {
+  font-family: Segoe UI;
+  display: none;
+  position: absolute;
+  background-color: var(--white);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 220px;
+  z-index: 1000;
+  top: 100%;
+  left: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  animation: dropEffect 0.3s ease;
+}
+
+.cascade:hover .waterfall {
+  font-family: Segoe UI;
+  display: block;
+}
+
+.stream {
+  display: flex;
+  align-items: center;
+  font-family: Segoe UI;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: background-color 0.3s ease;
+}
+
+.stream:hover {
+  text-decoration: none;
+  background-color: var(--bg-color);
+}
+
+.stream svg {
+  color: var(--secondary-color);
+}
+.gateway {
+  display: flex;
+  justify-content: center;
+}
+.portal {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border: none;
+  padding: 0.625rem 1.5rem;
+  font-family: Segoe UI;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.portal:hover {
+  background-color: var(--primary-color);
+}
+
+.wand {
+  display: none;
+  flex-direction: column;
+  font-family: Segoe UI;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.stroke {
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-color);
+  margin: 4px 0;
+  transition: 0.4s;
+  font-family: Segoe UI;
+  transform-origin: left center;
+}
+
+.wand.active .stroke:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.wand.active .stroke:nth-child(2) {
+  opacity: 0;
+}
+
+.wand.active .stroke:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+@keyframes dropEffect {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .realm {
+    position: fixed;
+    top: 0;
+    font-family: Segoe UI;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: left 0.5s ease;
+    padding: 2rem;
+    gap: 1rem;
+  }
+
+  .realm.active {
+    left: 0;
+  }
+
+  .pathways {
+    flex-direction: column;
+    font-family: Segoe UI;
+    justify-content: center;
+    width: 100%;
+    margin-left: -2rem;
+    align-items: center;
+  }
+
+  .way {
+    width: 100%;
+    text-align: center;
+    font-family: Segoe UI;
+    margin: 15px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .realm.active .way {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .realm.active .way:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  .realm.active .way:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  .realm.active .way:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  .realm.active .way:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+  .realm.active .way:nth-child(5) {
+    transition-delay: 0.5s;
+  }
+  .realm.active .way:nth-child(6) {
+    transition-delay: 0.6s;
+  }
+  .realm.active .way:nth-child(7) {
+    transition-delay: 0.7s;
+  }
+
+  .waterfall {
+    position: static;
+    display: none;
+    width: 100%;
+    box-shadow: none;
+    font-family: Segoe UI;
+    text-align: center;
+    background: transparent;
+  }
+
+  .cascade.active .waterfall {
+    display: block;
+  }
+
+  .wand {
+    font-family: Segoe UI;
+    display: flex;
+    position: relative;
+    z-index: 1100;
+  }
+  .gateway {
+    text-align: center;
+  }
+  .portal {
+    font-family: Segoe UI;
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+/* Header */
+
 .Hero {
   height: 70vh;
 }
@@ -238,6 +521,12 @@ nav {
 }
 .About-Right {
   background-color: #f1f1f1;
+  width: 50%;
+}
+@media screen and (max-width: 767px) {
+  .About-Right {
+    width: 100%;
+  }
 }
 .About-Right .btn-53 {
   box-shadow: 1px 2px 3px black;
@@ -258,8 +547,9 @@ nav {
 #About {
   background-color: #f1f1f1;
 }
+
 .About-Left img {
-  width: 50rem;
+  width: 35rem;
 }
 @media screen and (max-width: 767px) {
   .About-Left img {
@@ -271,7 +561,7 @@ nav {
 #Search,
 #Service,
 .TL {
-  background-color: #f1f1f1;
+  background-color: var(--primary-color);
 }
 .container {
   display: grid;
@@ -283,22 +573,21 @@ nav {
 }
 
 .card {
-  /* background-color: #f8f8f8; */
   border-radius: 1rem;
   padding: 2rem;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transform: scale(0.95);
+  transform: scale(0.75);
   transition: transform 0.3s ease-in-out;
 }
 
 .card:hover {
-  transform: scale(1);
+  transform: scale(0.8);
 }
 
 .card img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   margin-left: 6.5rem;
   margin-bottom: 1rem;
 }
@@ -521,6 +810,7 @@ h2::after {
   align-items: center;
   gap: 3rem;
   padding: 2rem;
+  background-color: #83c9f156;
 }
 #Managment {
   text-align: center;
@@ -531,11 +821,7 @@ h2::after {
   width: 15rem;
   height: 15rem;
 }
-#Find {
-  padding-top: 0px;
-  /* margin-top: -2rem; */
-  background-color: #4169e0;
-}
+
 .carousel-item {
   text-align: center;
 }
@@ -695,6 +981,10 @@ h2::after {
   position: relative;
   transition: all 0.3s ease;
 }
+.news-link a {
+  color: inherit;
+  text-decoration: none;
+}
 
 .news-link:hover {
   color: var(--accent-gold);
@@ -763,8 +1053,8 @@ h2::after {
 }
 
 .modal-image {
-  width: 100%;
-  height: auto;
+  width: 350px;
+  height: 350px;
   display: block;
 }
 
@@ -787,122 +1077,16 @@ h2::after {
   background-color: #6c757d;
   border-color: #6c757d;
 }
+.bbuu {
+  text-align: center;
+  padding: 2rem;
+}
+.bbuu a {
+  font-size: 30px;
+  text-decoration: none;
+}
 /* Blog */
 /* Footer */
-footer {
-  background-color: #83a7f2;
-  color: white;
-  padding: 2rem 0;
-  text-align: center;
-}
-.IMG {
-  text-align: center;
-}
-.IMG img {
-  width: 150px;
-}
-/* Footer */
-/* Social */
-.example-2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 20px;
-}
-.example-2 .icon-content {
-  margin: 0 10px;
-  position: relative;
-}
-.example-2 .icon-content .tooltip {
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
-  padding: 6px 10px;
-  border-radius: 5px;
-  opacity: 0;
-  visibility: hidden;
-  font-size: 14px;
-  transition: all 0.3s ease;
-}
-.example-2 .icon-content:hover .tooltip {
-  opacity: 1;
-  visibility: visible;
-  top: -50px;
-}
-.example-2 .icon-content a {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  color: black;
-  background-color: #fff;
-  transition: all 0.3s ease-in-out;
-}
-.example-2 .icon-content a:hover {
-  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
-}
-.example-2 .icon-content a svg {
-  position: relative;
-  z-index: 1;
-  width: 30px;
-  height: 30px;
-}
-.example-2 .icon-content a:hover {
-  color: white;
-}
-.example-2 .icon-content a .filled {
-  position: absolute;
-  top: auto;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background-color: #000;
-  transition: all 0.3s ease-in-out;
-}
-.example-2 .icon-content a:hover .filled {
-  height: 100%;
-}
-
-.example-2 .icon-content a[data-social="Facebook"] .filled,
-.example-2 .icon-content a[data-social="Facebook"] ~ .tooltip {
-  background-color: blue;
-}
-.example-2 .icon-content a[data-social="Tiktok"] .filled,
-.example-2 .icon-content a[data-social="Tiktok"] ~ .tooltip {
-  background-color: black;
-  color: white;
-}
-
-.example-2 .icon-content a[data-social="Whatsapp"] .filled,
-.example-2 .icon-content a[data-social="Whatsapp"] ~ .tooltip {
-  background: linear-gradient(45deg, #ff0050, #000000, #00f2ea);
-
-  fill: white;
-}
-
-.example-2 .icon-content a[data-social="instagram"] .filled,
-.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
-  background: linear-gradient(
-    45deg,
-    #405de6,
-    #5b51db,
-    #b33ab4,
-    #c135b4,
-    #e1306c,
-    #fd1f1f
-  );
-}
-
-/* Social */
-/* Socials */
-/* Typo */
 .iam,
 .text {
   font-size: 3rem;
@@ -927,3 +1111,267 @@ footer {
     width: 100%;
   }
 }
+/* Footer */
+.stl-footer {
+  background-color: #002147;
+  color: #ffffff;
+  padding: 40px 0 0;
+  font-family: "Arial", sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+@media screen and (max-width: 767px) {
+  .footer-container {
+    justify-content: start;
+  }
+}
+.footer-section {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.footer-section h4 {
+  color: #ffd100;
+  border-bottom: 2px solid #ffd100;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.footer-links li {
+  list-style: none;
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #ffd100;
+}
+
+address {
+  font-style: normal;
+  margin-bottom: 15px;
+}
+
+.social-media a {
+  color: #ffd100;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-bottom {
+  background-color: #001324;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.school-motto {
+  color: #ffd100;
+  font-style: italic;
+  font-weight: bold;
+}
+
+a {
+  color: #ffd100;
+}
+/* From Uiverse.io by david-mohseni */
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  height: 120px;
+  width: 100%;
+  padding-top: 40px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #000;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #000;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+footer .wrapper svg {
+  fill: white;
+}
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: #fff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  color: #fff;
+  background: #000; /* Base black */
+  background: radial-gradient(circle at 30% 30%, #fe2c55, transparent),
+    radial-gradient(circle at 70% 70%, #25f4ee, transparent), #000;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #e4405f;
+  color: #fff;
+}
+.tuy {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: Segoe UI;
+  font-weight: 600;
+  text-align: center;
+  color: rgb(255, 208, 0);
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.tuy::after {
+  content: "";
+  position: absolute;
+  text-decoration: none;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: green;
+  transition: width 0.3s ease;
+}
+
+.tuy:hover {
+  color: rgb(255, 208, 0);
+  text-decoration: none;
+}
+
+.tuy:hover::after {
+  width: 100%;
+  text-decoration: none;
+}
+.bbuua {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: Segoe UI;
+  font-weight: 600;
+  text-align: center;
+  color: rgb(255, 208, 0);
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.bbuua::after {
+  content: "";
+  position: absolute;
+  text-decoration: none;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: green;
+  transition: width 0.3s ease;
+}
+
+.bbuua:hover {
+  color: rgb(255, 208, 0);
+  text-decoration: none;
+}
+
+.bbuua:hover::after {
+  width: 100%;
+  text-decoration: none;
+}
+/* Footer */
+/* Stats */
+.stats {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 40px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+/* Stats */

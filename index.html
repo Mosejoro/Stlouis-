@@ -51,6 +51,10 @@
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     />
@@ -83,139 +87,75 @@
       />
     </div>
     <!-- Header -->
-    <nav class="navbar navbar-expand-lg p-2">
-      <div class="container-fluid">
-        <a class="brand" href="#"
-          ><img
+    <nav class="topbar">
+      <div class="shell">
+        <a href="#" class="identity">
+          <img
             src="img/Bida2.png"
-            alt="St. Louis Nursery and Primary School Bida Official Logo - Excellence in Education"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 text-center mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            alt="St. Louis Nursery and Primary School Bida Official Logo"
+          />
+        </a>
+
+        <div class="wand" id="magicWand">
+          <div class="stroke"></div>
+          <div class="stroke"></div>
+          <div class="stroke"></div>
+        </div>
+
+        <div class="realm" id="mainRealm">
+          <ul class="pathways">
+            <li class="way">
+              <a href="#" class="route active">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
+            <li class="way">
+              <a href="about.html" class="route">About Us</a>
             </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="Pay-main/index.html"
-                aria-disabled="true"
-                >Payment</a
-              >
+            <li class="way">
+              <a href="Pay-main/index.html" class="route">Payment</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-disabled="true">Admission</a>
+            <li class="way">
+              <a href="#" class="route">Admission</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Gallery.html" aria-disabled="true"
-                >Our Teachers
-              </a>
+            <li class="way">
+              <a href="Gallery.html" class="route">Our Teachers</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#Blog" aria-disabled="true"
-                >Latest News</a
-              >
+            <li class="way">
+              <a href="#Blog" class="route">Latest News</a>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Socials
-              </a>
-              <ul class="dropdown-menu">
+            <li class="way cascade">
+              <a href="#" class="route">Socials</a>
+              <ul class="waterfall">
                 <li>
-                  <a class="dropdown-item align-items-center" href="#"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="27"
-                      height="27"
-                      fill="currentColor"
-                      class="bi bi-facebook"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
-                      />
-                    </svg>
-                    Facebook</a
-                  >
+                  <a href="https://www.facebook.com/SLNPBIDA" class="stream">
+                    <i class="ri-facebook-fill"></i>
+                    Facebook
+                  </a>
                 </li>
                 <li>
-                  <a class="dropdown-item align-items-center" href="#"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="27"
-                      height="27"
-                      fill="currentColor"
-                      class="bi bi-tiktok"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"
-                      />
-                    </svg>
-                    Tik Tok</a
-                  >
+                  <a href="https://vm.tiktok.com/ZMkGc6RSg" class="stream">
+                    <i class="ri-tiktok-fill"></i>
+                    TikTok
+                  </a>
                 </li>
                 <li>
-                  <a class="dropdown-item align-items-center" href="#"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="27"
-                      height="27"
-                      fill="currentColor"
-                      class="bi bi-instagram"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
-                      />
-                    </svg>
-                    Instagram</a
+                  <a
+                    href="https://www.instagram.com/st_louis_bida?igsh=YW1rMng3enBqZGIx"
+                    class="stream"
                   >
+                    <i class="ri-instagram-fill"></i>
+                    Instagram
+                  </a>
                 </li>
               </ul>
             </li>
           </ul>
-          <div
-            class="d-flex Ju ms-auto justify-content-center align-items-center"
-            role="search"
-          >
-            <button class="btn-53">
-              <div class="original">Register</div>
-              <div class="letters">
-                <span>R</span>
-                <span>E</span>
-                <span>G</span>
-                <span>I</span>
-                <span>S</span>
-                <span>T</span>
-                <span>E</span>
-                <span>R</span>
-              </div>
-            </button>
+          <div class="gateway">
+            <button class="portal">Register</button>
           </div>
         </div>
       </div>
     </nav>
+
     <!-- Header -->
     <!-- Hero Section -->
     <div
@@ -223,29 +163,16 @@
     >
       <div class="Hero-Left" data-aos="fade-up-left" data-aos-delay="1000">
         <div class="text"></div>
-        <!-- <h1 class="display-2">St Louis Bida</h1> -->
       </div>
-      <!-- <div class="Hero-Right text-center">
-        <button class="btn-53">
-          <div class="original">Learn More</div>
-          <div class="letters">
-            <span>L</span>
-            <span>E</span>
-            <span>A</span>
-            <span>R</span>
-            <span>N</span>
-            <span class="pl-1"> </span>
-            <span>M</span>
-            <span>O</span>
-            <span>R</span>
-            <span>E</span>
-          </div>
-        </button>
-      </div> -->
     </div>
     <!-- Hero Section -->
     <!-- About Us -->
-    <div id="About" class="p-2 p-md-5">
+    <div
+      id="About"
+      class="p-2 p-md-5"
+      data-aos="fade-up"
+      data-aos-duration="3000"
+    >
       <h3 class="text-center section-title">Welcome to Saint Louis Bida</h3>
       <section
         class="text-center d-md-flex justify-content-between align-items-center p-md-5"
@@ -254,7 +181,7 @@
           <img src="img/Hero.jpg" alt="" />
         </div>
         <div class="About-Right p-md-4">
-          <p class="text-start">
+          <p class="text-center">
             At St. Louis Nursery and Primary School Bida, we are Niger State's
             leading institution for early childhood and primary education. Our
             world-class curriculum is rooted in Christian values, fostering
@@ -284,18 +211,17 @@
     </div>
     <!-- About Us -->
     <!-- Why Choose Us -->
-    <div id="Why">
+    <div id="Why" data-aos="fade-down" data-aos-duration="2000">
       <!-- Popular Searches -->
       <div id="Search" class="p-4">
         <div class="search"></div>
       </div>
       <div id="Service">
         <div class="text-center">
-          <h1 class="mb-3 section-title">Why Choose Us</h1>
+          <h1 class="mb-3 section-title text-white">Why Choose Us</h1>
         </div>
         <div class="navigation mt-4 mt-md-3">
           <button id="prev-btn">
-            <!-- <span class="d-xl-none">Prev</span> -->
             <span class="btn-53 d-xl-none">
               <div class="original d-xl-none">Prev</div>
               <div class="letters d-xl-none">
@@ -308,8 +234,7 @@
             <span class="d-none d-xl-block"><</span>
           </button>
           <button id="next-btn" class="ml-2">
-            <span class="btn-53 d-xl-none"
-              >''
+            <span class="btn-53 d-xl-none">
               <div class="original d-xl-none">Next</div>
               <div class="letters d-xl-none">
                 <span>N</span>
@@ -387,7 +312,28 @@
       <!-- Popular Searches -->
     </div>
     <!-- Why Choose Us -->
-
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <h3 data-target="30">0</h3>
+            <p>Years of Excellence</p>
+          </div>
+          <div class="stat-item">
+            <h3 data-target="100">0</h3>
+            <p>Qualified Teachers</p>
+          </div>
+          <div class="stat-item">
+            <h3 data-target="1000">0</h3>
+            <p>Successful Graduates</p>
+          </div>
+          <div class="stat-item">
+            <h3 data-target="25">0</h3>
+            <p>Extra-curricular Activities</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Managment Team -->
     <div id="Team" class="Team" data-aos="zoom-in" data-aos-once="true">
       <div class="container-fluid container-md mt-0 mobile-slider">
@@ -466,7 +412,7 @@
     <!-- Managment Team -->
 
     <!-- Find Us -->
-    <div id="Find">
+    <div id="Find" data-aos="zoom-in" data-aos-once="true">
       <h2>Where To Find Us</h2>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.824537509925!2d6.007159774102062!3d9.079743988194457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104961c5f5851c6b%3A0xe6b8884407e20123!2sST.%20LOUIS%20NURSERY%20AND%20PRIMARY%20SCHOOL%20BIDA!5e0!3m2!1sen!2sng!4v1737231233087!5m2!1sen!2sng"
@@ -491,7 +437,11 @@
     </div>
     <!-- Find Us -->
     <!-- Parent -->
-    <div class="container-fluid Parent mb-0">
+    <div
+      class="container-fluid Parent mb-0"
+      data-aos="zoom-in"
+      data-aos-once="true"
+    >
       <div class="row">
         <div class="col-md-8 col-center m-auto">
           <h2>What our Parents are Saying</h2>
@@ -582,7 +532,13 @@
     <!-- Parent -->
 
     <!-- Blog -->
-    <section class="news-section" id="Blog">
+    <section
+      class="news-section"
+      id="Blog"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+      data-aos-once="true"
+    >
       <div class="news-header-container">
         <img
           src="img/Bida2.png"
@@ -609,69 +565,15 @@
             <div class="news-card-content">
               <h2 class="news-title">Celebrating 30th Anniversary!</h2>
               <p class="news-content">
-                It's been 30 years of excellence, growth, and success! St. Louis
-                Bida marked this milestone with a grand celebration attended by
-                students, parents, alumni, and the community.
+                For 30 years, St. Louis Bida has thrived in excellence, growth,
+                and success! This milestone was celebrated in grand style,
+                bringing together students, parents, alumni, and the entire
+                community.
               </p>
-              <span class="news-link">View Gallery</span>
             </div>
           </button>
         </div>
-        <!-- Modal -->
-        <div
-          class="modal fade"
-          id="Anniversary"
-          data-bs-backdrop="static"
-          data-bs-keyboard="false"
-          tabindex="-1"
-          aria-labelledby="Anniversary"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="Anniversary">
-                  Celebrating 30 Years of Excellence at St. Louis Bida
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <div
-                  class="d-flex justify-content-center align-items-center flex-column p-3"
-                >
-                  <img
-                    src="img/Building.jpg"
-                    alt="Spelling Bee Champions Group Photo"
-                    class="modal-image rounded-2"
-                  />
-                  <p class="text-center">
-                    St. Louis Bida proudly marked its 30th Anniversary in grand
-                    style! For three decades, we’ve been dedicated to shaping
-                    young minds and fostering excellence. The celebration was a
-                    memorable event filled with joy, gratitude, and reflections
-                    on our remarkable journey. Here’s to many more years of
-                    success and growth!
-                  </p>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Modal -->
+
         <div class="news-card">
           <button
             type="button"
@@ -680,74 +582,19 @@
             data-bs-target="#PTA"
           >
             <img
-              src="img/Chairman.jpg"
+              src="img/Pta.JPG"
               alt="New PTA Chairman"
               class="news-card-image"
             />
             <div class="news-card-content">
               <h2 class="news-title">Introducing Our New PTA Chairman</h2>
               <p class="news-content">
-                We're pleased to welcome Mr. Chinedu Nwachukwu as the new
-                Chairman of the Parents-Teachers Association (PTA). His
-                leadership promises to strengthen the school-parent partnership.
+                We're pleased to welcome Mr. S.Adesanya as the new Chairman of
+                the Parents-Teachers Association (PTA). His leadership promises
+                to strengthen the school-parent partnership.
               </p>
-              <span class="news-link">View Gallery</span>
             </div>
           </button>
-        </div>
-        <!-- Modal -->
-        <div
-          class="modal fade"
-          id="PTA"
-          data-bs-backdrop="static"
-          data-bs-keyboard="false"
-          tabindex="-1"
-          aria-labelledby="PTA"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="PTA">
-                  Welcome Our New PTA Chairman – Mr. Chinedu Nwachukwu"
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <div
-                  class="d-flex justify-content-center align-items-center flex-column p-3"
-                >
-                  <img
-                    src="img/Chairman (2).jpg"
-                    alt="Spelling Bee Champions Group Photo"
-                    class="modal-image rounded-2"
-                  />
-                  <p class="text-center">
-                    We are delighted to introduce Mr. Chinedu Nwachukwu as the
-                    new Chairman of the St. Louis Bida Parents-Teachers
-                    Association (PTA). With his vision and dedication, we look
-                    forward to fostering stronger partnerships between parents
-                    and the school, ensuring the continued growth and success of
-                    our students.
-                  </p>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div class="news-card">
@@ -826,341 +673,107 @@
             </div>
           </div>
         </div>
-        <div class="news-card">
-          <button
-            type="button"
-            class="news-modal-button"
-            data-bs-toggle="modal"
-            data-bs-target="#AmbModal"
-          >
-            <img
-              src="img/pngegg.png"
-              alt="Ambassador"
-              class="news-card-image"
-            />
-            <div class="news-card-content">
-              <h2 class="news-title">
-                Meet Our School Ambassador: The Face of Our Excellence
-              </h2>
-              <p class="news-content">
-                We are thrilled to announce our newly chosen school ambassador!
-                This is a significant honor and responsibility, as the
-                ambassador represents the values, spirit, and excellence that
-                define our institution.
-              </p>
-              <span class="news-link">Meet the Ambassador</span>
-            </div>
-          </button>
-        </div>
-        <div
-          class="modal fade"
-          id="AmbModal"
-          data-bs-backdrop="static"
-          data-bs-keyboard="false"
-          tabindex="-1"
-          aria-labelledby="AmbModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="AmbModalLabel">
-                  St. Louis Bida Spelling Bee Champions 2024
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <div
-                  class="d-flex justify-content-center align-items-center flex-column p-3"
-                >
-                  <img
-                    src="img/Ambassador.jpg"
-                    alt="Spelling Bee Champions Group Photo"
-                    class="modal-image rounded-2"
-                  />
-                  <p class="text-center">
-                    Mrs. Racheal Augustine has been chosen as the face of our
-                    school, embodying excellence, leadership, and the core
-                    values we stand for. As our official representative, Mrs.
-                    Racheal Augustine plays a pivotal role in showcasing the
-                    spirit of the institution through active participation in
-                    events, engaging with prospective students, and promoting
-                    our achievements to the broader community. Her dedication
-                    and outstanding achievements make them a true inspiration
-                    and a model for others to follow.
-                  </p>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Modal -->
-        <div class="news-card">
-          <img
-            src="img/Payment.jpg"
-            alt="Online Payment System"
-            class="news-card-image"
-          />
-          <div class="news-card-content">
-            <h2 class="news-title">Online Payment Now Available!</h2>
-            <p class="news-content">
-              Paying school fees has never been easier! St. Louis Bida has
-              introduced a secure online payment system on our new website.
-              Parents can now manage payments conveniently.
-            </p>
-            <a href="Pay-main/index.html" class="news-link">Make a Payment</a>
-          </div>
-        </div>
+      </div>
+      <div class="bbuu">
+        <a href="Blog/index.html" class="bbuua"><span>See More</span></a>
       </div>
     </section>
+
     <!-- Blog -->
     <!-- Footer -->
-    <footer
-      class="d-md-flex text-white align-items-center justify-content-around justify-content-md-evenly"
-    >
-      <div class="d-md-flex text-center fourth justify-content-evenly pt-5">
-        <div
-          class="side justify-content-center flex-column ps-3 d-flex d-md-block"
-        >
-          <div class="IMG">
-            <img loading="lazy" src="img/Bida2.png" alt="" />
-          </div>
-          <h3>St. Louis Academy</h3>
+    <footer class="stl-footer">
+      <div class="footer-container">
+        <!-- Info Section -->
+        <div class="footer-section">
+          <h4>St. Louis School</h4>
+          <p class="school-motto">"Empowering Minds, Building Character"</p>
           <p>
-            Empowering Excellence in Education. Proudly shaping future leaders
-            through innovation and integrity. Stay connected for updates,
-            achievements, and opportunities to join our thriving community
+            Established in 1994, St. Louis School is a premier educational
+            institution committed to academic excellence and holistic
+            development.
           </p>
-          <div class="share pt-2">
-            <ul class="example-2">
-              <!-- Facebook -->
-              <li class="icon-content">
-                <a
-                  href="https://web.facebook.com/SLNPBIDA/"
-                  aria-label="Facebook"
-                  data-social="Facebook"
-                >
-                  <div class="filled"></div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-facebook"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
-                    />
-                  </svg>
-                </a>
-                <div class="tooltip">Facebook</div>
-              </li>
-              <!-- Facebook -->
-              <!-- Whatsapp -->
-              <li class="icon-content">
-                <a
-                  href="https://www.tiktok.com/@saintlouisbida"
-                  aria-label="Whatsapp"
-                  data-social="Whatsapp"
-                >
-                  <div class="filled"></div>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <path
-                      fill="currentColor"
-                      d="M448 209.9a210.1 210.1 0 0 1
-                    -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6
-                    74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9
-                    22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67
-                    20.1z"
-                    />
-                  </svg>
-                </a>
-                <div class="tooltip">Tiktok</div>
-              </li>
-              <!-- Whatsapp -->
-              <!-- Instagram -->
-              <li class="icon-content">
-                <a
-                  href="https://www.instagram.com/st_louis_bida"
-                  aria-label="Instagram"
-                  data-social="instagram"
-                >
-                  <div class="filled"></div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-instagram"
-                    viewBox="0 0 16 16"
-                    xml:space="preserve"
-                  >
-                    <path
-                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
-                </a>
-                <div class="tooltip">Instagram</div>
-              </li>
-              <!-- Instagram -->
-            </ul>
-          </div>
         </div>
-        <div class="links d-flex flex-column align-items-center">
-          <h5>Quick Links</h5>
-          <ul class="FG">
-            <li>
-              <a class="nav-link" aria-current="page" href="#Home">Home</a>
-            </li>
-            <div class="nav-item dropdown text-center">
-              <li>
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
+        <div class="social-media">
+          <!-- From Uiverse.io by david-mohseni -->
+          <ul class="wrapper">
+            <li class="icon facebook">
+              <span class="tooltip">Facebook</span>
+              <a href="https://www.facebook.com/SLNPBIDA">
+                <svg
+                  viewBox="0 0 320 512"
+                  height="1.2em"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  Center
-                </a>
-
-                <ul
-                  class="dropdown-menu"
-                  style="background-color: rgb(255, 200, 0)"
-                  aria-labelledby="navbarDropdown"
-                >
-                  <li>
-                    <a class="dropdown-item" href="Research/index.html"
-                      >Research and Innovation</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="Learning/index.html">
-                      Learning and Development</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="Enterpreneur/index.html"
-                      >Entrepreneurship</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="Events/index.html">Events</a>
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="index.html#Center">Center</a>
-                  </li>
-                </ul>
-              </li>
-            </div>
-            <li><a class="nav-link" href="#Team">The Team</a></li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Service
+                  <path
+                    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                  ></path>
+                </svg>
               </a>
-              <ul
-                class="dropdown-menu text-center"
-                style="background-color: rgb(255, 200, 0)"
-              >
-                <li>
-                  <a class="dropdown-item" href="ItaaS/index.html">ITaaS</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="Start/index.html"
-                    >Funding for Start Up</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="Remote/index.html"
-                    >Remote Tech Jobs</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="Deet/index.html"
-                    >Deet Academy</a
-                  >
-                </li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#Service">Our Services</a>
-                </li>
-              </ul>
             </li>
-            <li><a class="nav-link" href="#Contact">Contact Us</a></li>
-            <li><a class="nav-link" href="#About">About Us</a></li>
-            <li><a class="nav-link" href="#Annoucement">Annoucement</a></li>
+            <li class="icon twitter">
+              <span class="tooltip">Tiktok</span>
+              <a href="https://vm.tiktok.com/ZMkGc6RSg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-tiktok"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li class="icon instagram">
+              <span class="tooltip">Instagram</span>
+              <a
+                href="https://www.instagram.com/st_louis_bida?igsh=YW1rMng3enBqZGIx"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="1.2em"
+                  fill="currentColor"
+                  class="bi bi-instagram"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
           </ul>
         </div>
+
+        <!-- Contact Us -->
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <address>
+            St. Louis Nur/Pry School<br />
+            32H5+VVX, Zungeru Lemu Road.<br />
+            Bida<br />
+            Niger
+          </address>
+          <p>📞 <a class="tuy" href="tel:+2348132871614">+2348132871614</a></p>
+          <p>
+            📧
+            <a class="tuy" href="mailto:info@stlouisschool.edu"
+              >info@stlouisschool.edu</a
+            >
+          </p>
+
+          <div class="social-media"></div>
+
+          <p>Office Hours: Mon-Fri: 8AM - 3PM</p>
+        </div>
       </div>
-      <div class="col-md-4">
-        <h2 class="mb-4">Contact Us</h2>
-        <div class="mb-3 text-start">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="30px"
-            viewBox="0 -960 960 960"
-            width="30px"
-            fill="white"
-          >
-            <path
-              d="M120-120v-560h160v-160h400v320h160v400H520v-160h-80v160H120Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Z"
-            />
-          </svg>
-          <b class="ps-3">First Floor F1, The City Mall Onikan, Lagos.</b>
-        </div>
-        <div class="mb-3 text-start">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30px"
-            height="30px"
-            fill="currentColor"
-            class="bi bi-envelope"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
-            />
-          </svg>
-          <b class="">Admin@hubfordigitalexcellence.com</b>
-        </div>
-        <div class="mb-3 text-start">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="30px"
-            viewBox="0 -960 960 960"
-            width="30px"
-            fill="white"
-          >
-            <path
-              d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"
-            />
-          </svg>
-          <b class="ps-3">+2348143838441</b><br />
-        </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 St. Louis School. All rights reserved.</p>
       </div>
     </footer>
     <!-- Footer -->
@@ -1187,6 +800,106 @@
         backSpeed: 70,
         loop: true,
       });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const magicWand = document.getElementById("magicWand");
+        const mainRealm = document.getElementById("mainRealm");
+        const cascades = document.querySelectorAll(".cascade");
+
+        magicWand.addEventListener("click", function (e) {
+          e.stopPropagation();
+          magicWand.classList.toggle("active");
+          mainRealm.classList.toggle("active");
+        });
+
+        cascades.forEach((cascade) => {
+          cascade.addEventListener("click", function (e) {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              this.classList.toggle("active");
+            }
+          });
+        });
+
+        document.addEventListener("click", function (e) {
+          if (window.innerWidth <= 768) {
+            if (
+              !mainRealm.contains(e.target) &&
+              !magicWand.contains(e.target)
+            ) {
+              mainRealm.classList.remove("active");
+              magicWand.classList.remove("active");
+              cascades.forEach((cascade) => cascade.classList.remove("active"));
+            }
+          }
+        });
+      });
+    </script>
+    <script>
+      // Intersection Observer for triggering animations when stats section is visible
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Start animations when section becomes visible
+            animateStats();
+            // Unobserve after triggering
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe the stats section
+      const statsSection = document.querySelector(".stats");
+      statsObserver.observe(statsSection);
+
+      function animateStats() {
+        const statItems = document.querySelectorAll(".stat-item");
+
+        statItems.forEach((item, index) => {
+          // Add animation class with delay based on index
+          setTimeout(() => {
+            item.classList.add("animate");
+          }, index * 200);
+
+          const statNumber = item.querySelector("h3");
+          const target = parseInt(statNumber.getAttribute("data-target"));
+          const duration = 300; // Animation duration in milliseconds
+          const steps = 80; // Number of steps in animation
+          const stepValue = target / steps;
+          let current = 0;
+
+          const updateNumber = () => {
+            current += stepValue;
+            if (current > target) {
+              current = target;
+            }
+            // Add + symbol if target is 30 (Years of Excellence)
+            statNumber.textContent =
+              Math.floor(current) + (target === 30 ? "+" : "");
+
+            if (current < target) {
+              requestAnimationFrame(updateNumber);
+            } else {
+              // Add + symbol to numbers that need it
+              if (target === 1000) {
+                statNumber.textContent = "1000+";
+              } else if (target === 25) {
+                statNumber.textContent = "25+";
+              }
+            }
+          };
+
+          requestAnimationFrame(updateNumber);
+        });
+      }
     </script>
   </body>
 </html>

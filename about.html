@@ -86,14 +86,48 @@
     <!-- Animation  -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Animation  -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Font 1 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sassy+Frass&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Agu+Display&family=Amatic+SC:wght@400;700&family=Cinzel:wght@400..900&family=Dancing+Script:wght@400..700&family=Lobster&family=Mochiy+Pop+One&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pacifico&family=Platypi:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik+Vinyl&family=Salsa&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font 1 -->
+    <!-- Animation  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Animation  -->
     <style>
       :root {
-        /* Replace these colors with school brand colors */
-        --primary-color: #83c9f2;
-        --secondary-color: rgb(215, 237, 252);
-        --accent-color: #ffd700;
+        --primary-color: #3498db;
+        --secondary-color: #2c3e50;
+        --bg-color: #f4f6f7;
         --text-color: #333;
-        --background-light: #f1f1f1;
+        --white: #ffffff;
       }
       @font-face {
         font-family: Dss;
@@ -103,7 +137,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: Dss;
+        list-style: none;
       }
 
       body {
@@ -120,6 +154,7 @@
 
       /* Hero Section */
       .hero {
+        margin-top: 5rem;
         background-color: var(--primary-color);
         color: white;
         padding: 60px 0;
@@ -220,119 +255,658 @@
           font-size: 2rem;
         }
       }
+      /* Header */
+      .topbar {
+        background-color: var(--white);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        transition: all 0.3s ease;
+        font-family: Segoe UI;
+      }
+
+      .shell {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        font-family: Segoe UI;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+
+      .identity img {
+        height: 50px;
+        width: auto;
+        transition: transform 0.3s ease;
+      }
+
+      .identity img:hover {
+        transform: scale(1.05);
+      }
+
+      .realm {
+        display: flex;
+        font-family: Segoe UI;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        gap: 10rem;
+      }
+
+      .pathways {
+        display: flex;
+        align-items: center;
+        font-family: Segoe UI;
+        gap: 1.5rem;
+        justify-content: center;
+        padding-top: 1rem;
+      }
+      .way {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .route {
+        text-decoration: none;
+        font-size: 16px;
+        font-family: Segoe UI;
+        font-weight: 600;
+        text-align: center;
+        color: var(--primary-color);
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .route::after {
+        content: "";
+        position: absolute;
+        text-decoration: none;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: var(--secondary-color);
+        transition: width 0.3s ease;
+      }
+
+      .route:hover {
+        color: var(--secondary-color);
+        text-decoration: none;
+      }
+
+      .route:hover::after {
+        width: 100%;
+        text-decoration: none;
+      }
+
+      .cascade {
+        position: relative;
+      }
+
+      .waterfall {
+        font-family: Segoe UI;
+        display: none;
+        position: absolute;
+        background-color: var(--white);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        min-width: 220px;
+        z-index: 1000;
+        top: 100%;
+        left: 0;
+        border-radius: 8px;
+        overflow: hidden;
+        animation: dropEffect 0.3s ease;
+      }
+
+      .cascade:hover .waterfall {
+        font-family: Segoe UI;
+        display: block;
+      }
+
+      .stream {
+        display: flex;
+        align-items: center;
+        font-family: Segoe UI;
+        gap: 0.75rem;
+        padding: 0.75rem 1.25rem;
+        text-decoration: none;
+        color: var(--text-color);
+        transition: background-color 0.3s ease;
+      }
+
+      .stream:hover {
+        text-decoration: none;
+        background-color: var(--bg-color);
+      }
+
+      .stream svg {
+        color: var(--secondary-color);
+      }
+      .gateway {
+        display: flex;
+        justify-content: center;
+      }
+      .portal {
+        background-color: var(--secondary-color);
+        color: var(--white);
+        border: none;
+        padding: 0.625rem 1.5rem;
+        font-family: Segoe UI;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .portal:hover {
+        background-color: var(--primary-color);
+      }
+
+      .wand {
+        display: none;
+        flex-direction: column;
+        font-family: Segoe UI;
+        cursor: pointer;
+        z-index: 1100;
+      }
+
+      .stroke {
+        width: 25px;
+        height: 3px;
+        background-color: var(--primary-color);
+        margin: 4px 0;
+        transition: 0.4s;
+        font-family: Segoe UI;
+        transform-origin: left center;
+      }
+
+      .wand.active .stroke:nth-child(1) {
+        transform: rotate(45deg);
+      }
+
+      .wand.active .stroke:nth-child(2) {
+        opacity: 0;
+      }
+
+      .wand.active .stroke:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      @keyframes dropEffect {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .realm {
+          position: fixed;
+          top: 0;
+          font-family: Segoe UI;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background-color: var(--white);
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          z-index: 999;
+          transition: left 0.5s ease;
+          padding: 2rem;
+          gap: 1rem;
+        }
+
+        .realm.active {
+          left: 0;
+        }
+
+        .pathways {
+          flex-direction: column;
+          font-family: Segoe UI;
+          justify-content: center;
+          width: 100%;
+          margin-left: -2rem;
+          align-items: center;
+        }
+
+        .way {
+          width: 100%;
+          text-align: center;
+          font-family: Segoe UI;
+          margin: 15px 0;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .realm.active .way {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .realm.active .way:nth-child(1) {
+          transition-delay: 0.1s;
+        }
+        .realm.active .way:nth-child(2) {
+          transition-delay: 0.2s;
+        }
+        .realm.active .way:nth-child(3) {
+          transition-delay: 0.3s;
+        }
+        .realm.active .way:nth-child(4) {
+          transition-delay: 0.4s;
+        }
+        .realm.active .way:nth-child(5) {
+          transition-delay: 0.5s;
+        }
+        .realm.active .way:nth-child(6) {
+          transition-delay: 0.6s;
+        }
+        .realm.active .way:nth-child(7) {
+          transition-delay: 0.7s;
+        }
+
+        .waterfall {
+          position: static;
+          display: none;
+          width: 100%;
+          box-shadow: none;
+          font-family: Segoe UI;
+          text-align: center;
+          background: transparent;
+        }
+
+        .cascade.active .waterfall {
+          display: block;
+        }
+
+        .wand {
+          font-family: Segoe UI;
+          display: flex;
+          position: relative;
+          z-index: 1100;
+        }
+        .gateway {
+          text-align: center;
+        }
+        .portal {
+          font-family: Segoe UI;
+          text-align: center;
+          margin-top: 1rem;
+        }
+      }
+      /* Header */
+      /* Footer */
+      .iam,
+      .text {
+        font-size: 3rem;
+        font-weight: 500;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: Salsa;
+      }
+      /* Typo */
+      .fourth {
+        padding: 2rem;
+      }
+
+      .side {
+        width: 50%;
+        text-align: center;
+      }
+      @media screen and (max-width: 767px) {
+        .side {
+          width: 100%;
+        }
+      }
+      /* Footer */
+      .stl-footer {
+        background-color: #002147;
+        color: #ffffff;
+        padding: 40px 0 0;
+        font-family: "Arial", sans-serif;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 20px;
+      }
+      @media screen and (max-width: 767px) {
+        .footer-container {
+          justify-content: start;
+        }
+      }
+      .footer-section {
+        flex: 1;
+        margin: 0 20px;
+      }
+
+      .footer-section h4 {
+        color: #ffd100;
+        border-bottom: 2px solid #ffd100;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      .footer-links li {
+        list-style: none;
+        margin-bottom: 8px;
+      }
+
+      .footer-links a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      .footer-links a:hover {
+        color: #ffd100;
+      }
+
+      address {
+        font-style: normal;
+        margin-bottom: 15px;
+      }
+
+      .social-media a {
+        color: #ffd100;
+        text-decoration: none;
+        margin: 0 5px;
+      }
+
+      .footer-bottom {
+        background-color: #001324;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+      }
+
+      .footer-bottom p {
+        margin: 0;
+        font-size: 0.9em;
+      }
+
+      .school-motto {
+        color: #ffd100;
+        font-style: italic;
+        font-weight: bold;
+      }
+
+      a {
+        color: #ffd100;
+      }
+      /* From Uiverse.io by david-mohseni */
+      .wrapper {
+        display: inline-flex;
+        list-style: none;
+        height: 120px;
+        width: 100%;
+        padding-top: 40px;
+        font-family: "Poppins", sans-serif;
+        justify-content: center;
+      }
+
+      .wrapper .icon {
+        position: relative;
+        background: #000;
+        border-radius: 50%;
+        margin: 10px;
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+
+      .wrapper .tooltip {
+        position: absolute;
+        top: 0;
+        font-size: 14px;
+        background: #000;
+        color: #fff;
+        padding: 5px 8px;
+        border-radius: 5px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+
+      .wrapper .tooltip::before {
+        position: absolute;
+        content: "";
+        height: 8px;
+        width: 8px;
+        background: #fff;
+        bottom: -3px;
+        left: 50%;
+        transform: translate(-50%) rotate(45deg);
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      footer .wrapper svg {
+        fill: white;
+      }
+      .wrapper .icon:hover .tooltip {
+        top: -45px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .wrapper .icon:hover span,
+      .wrapper .icon:hover .tooltip {
+        text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+      }
+
+      .wrapper .facebook:hover,
+      .wrapper .facebook:hover .tooltip,
+      .wrapper .facebook:hover .tooltip::before {
+        background: #1877f2;
+        color: #fff;
+      }
+
+      .wrapper .twitter:hover,
+      .wrapper .twitter:hover .tooltip,
+      .wrapper .twitter:hover .tooltip::before {
+        color: #fff;
+        background: #000; /* Base black */
+        background: radial-gradient(circle at 30% 30%, #fe2c55, transparent),
+          radial-gradient(circle at 70% 70%, #25f4ee, transparent), #000;
+      }
+
+      .wrapper .instagram:hover,
+      .wrapper .instagram:hover .tooltip,
+      .wrapper .instagram:hover .tooltip::before {
+        background: #e4405f;
+        color: #fff;
+      }
+      .tuy {
+        text-decoration: none;
+        font-size: 16px;
+        font-family: Segoe UI;
+        font-weight: 600;
+        text-align: center;
+        color: rgb(255, 208, 0);
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .tuy::after {
+        content: "";
+        position: absolute;
+        text-decoration: none;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: green;
+        transition: width 0.3s ease;
+      }
+
+      .tuy:hover {
+        color: rgb(255, 208, 0);
+        text-decoration: none;
+      }
+
+      .tuy:hover::after {
+        width: 100%;
+        text-decoration: none;
+      }
+      .bbuua {
+        text-decoration: none;
+        font-size: 16px;
+        font-family: Segoe UI;
+        font-weight: 600;
+        text-align: center;
+        color: rgb(255, 208, 0);
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .bbuua::after {
+        content: "";
+        position: absolute;
+        text-decoration: none;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: green;
+        transition: width 0.3s ease;
+      }
+
+      .bbuua:hover {
+        color: rgb(255, 208, 0);
+        text-decoration: none;
+      }
+
+      .bbuua:hover::after {
+        width: 100%;
+        text-decoration: none;
+      }
+      /* Footer */
+      /* Stats */
+      .stats {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 40px 0;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        text-align: center;
+      }
+
+      .stat-item h3 {
+        font-size: 2.5rem;
+        color: var(--accent-color);
+      }
+
+      @media (max-width: 768px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+      }
+      /* Stats */
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg p-2 px-md-5">
-      <div class="container-fluid px-md-5">
-        <a class="brand" href="#"
-          ><img
+    <nav class="topbar">
+      <div class="shell">
+        <a href="index.html" class="identity">
+          <img
             src="img/Bida2.png"
-            alt="St. Louis Nursery and Primary School Bida Official Logo - Excellence in Education"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 text-center mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            alt="St. Louis Nursery and Primary School Bida Official Logo"
+          />
+        </a>
+
+        <div class="wand" id="magicWand">
+          <div class="stroke"></div>
+          <div class="stroke"></div>
+          <div class="stroke"></div>
+        </div>
+
+        <div class="realm" id="mainRealm">
+          <ul class="pathways">
+            <li class="way">
+              <a href="index.html" class="route active">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="about.html">About Us</a>
+            <li class="way">
+              <a href="about.html" class="route">About Us</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Pay-main/index.html">Payment</a>
+            <li class="way">
+              <a href="Pay-main/index.html" class="route">Payment</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-disabled="true">Admission</a>
+            <li class="way">
+              <a href="#" class="route">Admission</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Gallery.html" aria-disabled="true"
-                >Our Teachers
-              </a>
+            <li class="way">
+              <a href="Gallery.html" class="route">Our Teachers</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#Blog" aria-disabled="true"
-                >Latest News</a
-              >
+            <li class="way">
+              <a href="Blog/index.html" class="route">Latest News</a>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Socials
-              </a>
-              <ul class="dropdown-menu">
+            <li class="way cascade">
+              <a href="#" class="route">Socials</a>
+              <ul class="waterfall">
                 <li>
-                  <a class="dropdown-item align-items-center" href="#"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="27"
-                      height="27"
-                      fill="currentColor"
-                      class="bi bi-facebook"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
-                      />
-                    </svg>
-                    Facebook</a
-                  >
+                  <a href="https://www.facebook.com/SLNPBIDA" class="stream">
+                    <i class="ri-facebook-fill"></i>
+                    Facebook
+                  </a>
                 </li>
                 <li>
-                  <a class="dropdown-item align-items-center" href="#"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="27"
-                      height="27"
-                      fill="currentColor"
-                      class="bi bi-tiktok"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"
-                      />
-                    </svg>
-                    Tik Tok</a
-                  >
+                  <a href="https://vm.tiktok.com/ZMkGc6RSg" class="stream">
+                    <i class="ri-tiktok-fill"></i>
+                    TikTok
+                  </a>
                 </li>
                 <li>
-                  <a class="dropdown-item align-items-center" href="#"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="27"
-                      height="27"
-                      fill="currentColor"
-                      class="bi bi-instagram"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
-                      />
-                    </svg>
-                    Instagram</a
+                  <a
+                    href="https://www.instagram.com/st_louis_bida?igsh=YW1rMng3enBqZGIx"
+                    class="stream"
                   >
+                    <i class="ri-instagram-fill"></i>
+                    Instagram
+                  </a>
                 </li>
               </ul>
             </li>
           </ul>
+          <div class="gateway">
+            <button class="portal">Register</button>
+          </div>
         </div>
       </div>
     </nav>
+
+    <!-- Header -->
     <!-- Header -->
     <section class="hero">
       <div class="container">
@@ -363,7 +937,7 @@
             </p>
           </div>
           <div class="card">
-            <img src="img/Students11.jpg" alt="Students in Classroom" />
+            <img src="img/Cbt 2.jpg" alt="Students in Classroom" />
             <h3>Learning Approach</h3>
             <p>
               We employ a balanced blend of traditional and modern teaching
@@ -372,7 +946,7 @@
             </p>
           </div>
           <div class="card">
-            <img src="img/Cca.jpg" alt="Extra-curricular Activities" />
+            <img src="img/Cca 2.jpg" alt="Extra-curricular Activities" />
             <h3>Beyond Academics</h3>
             <p>
               Our comprehensive program includes sports, arts, music, and
@@ -388,18 +962,42 @@
         <h2 class="section-title">Our Core Values</h2>
         <div class="values-grid">
           <div class="value-card">
+            <img
+              width="50"
+              height="50"
+              src="https://img.icons8.com/isometric/50/graduation-cap.png"
+              alt="graduation-cap"
+            />
             <h3>Excellence</h3>
             <p>Striving for the highest standards in everything we do</p>
           </div>
           <div class="value-card">
+            <img
+              width="48"
+              height="48"
+              src="https://img.icons8.com/color/48/light-automation.png"
+              alt="light-automation"
+            />
             <h3>Innovation</h3>
             <p>Embracing new ideas and methods in education</p>
           </div>
           <div class="value-card">
+            <img
+              width="48"
+              height="48"
+              src="https://img.icons8.com/color/48/creativity-and-resourcefulness.png"
+              alt="creativity-and-resourcefulness"
+            />
             <h3>Character</h3>
             <p>Building strong moral and ethical foundations</p>
           </div>
           <div class="value-card">
+            <img
+              width="40"
+              height="40"
+              src="https://img.icons8.com/office/40/children.png"
+              alt="children"
+            />
             <h3>Community</h3>
             <p>Fostering a supportive and inclusive environment</p>
           </div>
@@ -435,6 +1033,12 @@
         <h2 class="section-title">Our Achievements</h2>
         <div class="grid">
           <div class="card">
+            <img
+              width="48"
+              height="48"
+              src="img/lovely-girl-sitting-stack-books.jpg"
+              alt="trophy--v1"
+            />
             <h3>Academic Excellence</h3>
             <p>
               Consistently high performance in national assessments and
@@ -442,6 +1046,12 @@
             </p>
           </div>
           <div class="card">
+            <img
+              width="48"
+              height="48"
+              src="img/Inter/img (3).jpg"
+              alt="trophy--v1"
+            />
             <h3>Sports Championships</h3>
             <p>
               Multiple inter-school sports championships and individual athlete
@@ -449,6 +1059,12 @@
             </p>
           </div>
           <div class="card">
+            <img
+              width="48"
+              height="48"
+              src="img/cropped-image-friends-stacking-hands-outdoors_1048944-2371837.jpg"
+              alt="trophy--v1"
+            />
             <h3>Community Impact</h3>
             <p>
               Recognition for our community service initiatives and
@@ -458,6 +1074,102 @@
         </div>
       </div>
     </section>
+    <!-- Footer -->
+    <footer class="stl-footer">
+      <div class="footer-container">
+        <!-- Info Section -->
+        <div class="footer-section">
+          <h4>St. Louis School</h4>
+          <p class="school-motto">"Empowering Minds, Building Character"</p>
+          <p>
+            Established in 1994, St. Louis School is a premier educational
+            institution committed to academic excellence and holistic
+            development.
+          </p>
+        </div>
+        <div class="social-media">
+          <!-- From Uiverse.io by david-mohseni -->
+          <ul class="wrapper">
+            <li class="icon facebook">
+              <span class="tooltip">Facebook</span>
+              <a href="https://www.facebook.com/SLNPBIDA">
+                <svg
+                  viewBox="0 0 320 512"
+                  height="1.2em"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li class="icon twitter">
+              <span class="tooltip">Tiktok</span>
+              <a href="https://vm.tiktok.com/ZMkGc6RSg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-tiktok"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li class="icon instagram">
+              <span class="tooltip">Instagram</span>
+              <a
+                href="https://www.instagram.com/st_louis_bida?igsh=YW1rMng3enBqZGIx"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="1.2em"
+                  fill="currentColor"
+                  class="bi bi-instagram"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Us -->
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <address>
+            St. Louis Nur/Pry School<br />
+            32H5+VVX, Zungeru Lemu Road.<br />
+            Bida<br />
+            Niger
+          </address>
+          <p>📞 <a class="tuy" href="tel:+2348132871614">+2348132871614</a></p>
+          <p>
+            📧
+            <a class="tuy" href="mailto:info@stlouisschool.edu"
+              >info@stlouisschool.edu</a
+            >
+          </p>
+
+          <div class="social-media"></div>
+
+          <p>Office Hours: Mon-Fri: 8AM - 3PM</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 St. Louis School. All rights reserved.</p>
+      </div>
+    </footer>
     <script>
       // Intersection Observer for triggering animations when stats section is visible
       const observerOptions = {
@@ -528,5 +1240,40 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const magicWand = document.getElementById("magicWand");
+        const mainRealm = document.getElementById("mainRealm");
+        const cascades = document.querySelectorAll(".cascade");
+
+        magicWand.addEventListener("click", function (e) {
+          e.stopPropagation();
+          magicWand.classList.toggle("active");
+          mainRealm.classList.toggle("active");
+        });
+
+        cascades.forEach((cascade) => {
+          cascade.addEventListener("click", function (e) {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              this.classList.toggle("active");
+            }
+          });
+        });
+
+        document.addEventListener("click", function (e) {
+          if (window.innerWidth <= 768) {
+            if (
+              !mainRealm.contains(e.target) &&
+              !magicWand.contains(e.target)
+            ) {
+              mainRealm.classList.remove("active");
+              magicWand.classList.remove("active");
+              cascades.forEach((cascade) => cascade.classList.remove("active"));
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>
