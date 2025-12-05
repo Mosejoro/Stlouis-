@@ -110,18 +110,12 @@
             <li class="way">
               <a href="about.html" class="route">About Us</a>
             </li>
-            <li class="way">
+            <!-- <li class="way">
               <a href="Pay-main/index.html" class="route">Payment</a>
             </li>
             <li class="way">
               <a href="#" class="route">Admission</a>
-            </li>
-            <li class="way">
-              <a href="Saint-louis-Cbt-main/index.html" class="route">Exam</a>
-            </li>
-            <li class="way">
-              <a href="Saint-louis-Cbt-main/admin.html" class="route">Admin</a>
-            </li>
+            </li> -->
             <li class="way">
               <a href="Gallery.html" class="route">Our Teachers</a>
             </li>
@@ -561,20 +555,20 @@
             type="button"
             class="news-modal-button"
             data-bs-toggle="modal"
-            data-bs-target="#Anniversary"
+            data-bs-target="#NewManager"
           >
             <img
-              src="img/30.jpg"
-              alt="30th Anniversary Celebration"
+              src="img/FR Okolo (2).jpg"
+              alt="New School Manager"
               class="news-card-image"
             />
             <div class="news-card-content">
-              <h2 class="news-title">Celebrating 30th Anniversary!</h2>
+              <h2 class="news-title">Welcome Our New School Manager</h2>
               <p class="news-content">
-                For 30 years, St. Louis Bida has thrived in excellence, growth,
-                and success! This milestone was celebrated in grand style,
-                bringing together students, parents, alumni, and the entire
-                community.
+                St. Louis Nursery and Primary School, Bida joyfully welcomes our
+                new School Manager, Rev. Fr. Emmanuel Okolo. His appointment
+                marks a new chapter of spiritual growth, discipline, and
+                academic excellence for our school community.
               </p>
             </div>
           </button>
@@ -608,24 +602,25 @@
             type="button"
             class="news-modal-button"
             data-bs-toggle="modal"
-            data-bs-target="#spellingBeeModal"
+            data-bs-target="#EduConnect"
           >
             <img
-              src="img/Senior Boy.jpg"
-              alt="Spelling Bee Champions"
+              src="img/Edu.jpg"
+              alt="Edu Connect 2025"
               class="news-card-image"
             />
             <div class="news-card-content">
-              <h2 class="news-title">Spelling Bee Champions!</h2>
+              <h2 class="news-title">Edu Connect 2025 Empowerment Program</h2>
               <p class="news-content">
-                Congratulations to our talented pupils for clinching first place
-                at the Spelling Bee Competition! Their hard work, dedication,
-                and love for learning truly paid off.
+                From 17th–19th September 2025, St. Louis Bida proudly hosted Edu
+                Connect, a life-changing program focused on equipping and
+                educating teachers for modern classroom excellence under the
+                theme “Innovating Education for a Changing World.
               </p>
-              <span class="news-link">See the Winners</span>
             </div>
           </button>
         </div>
+
         <!-- Modal -->
         <div
           class="modal fade"
@@ -765,13 +760,6 @@
             Niger
           </address>
           <p>📞 <a class="tuy" href="tel:+2348132871614">+2348132871614</a></p>
-          <p>
-            📧
-            <a class="tuy" href="mailto:info@stlouisschool.edu"
-              >info@stlouisschool.edu</a
-            >
-          </p>
-
           <div class="social-media"></div>
 
           <p>Office Hours: Mon-Fri: 8AM - 3PM</p>
@@ -779,9 +767,19 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2025 St. Louis School. All rights reserved.</p>
+        <p>© 2025 St. Louis Bida. All rights reserved.</p>
       </div>
     </footer>
+
+    <a
+      href="https://binativit.vercel.app/"
+      target="_blank"
+      class="bina-float"
+      title="Developed by BINA"
+    >
+      <img src="img/Bina.png" alt="BINA Logo" class="bina-logo" />
+    </a>
+
     <!-- Footer -->
 
     <script
@@ -808,104 +806,6 @@
       });
     </script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const magicWand = document.getElementById("magicWand");
-        const mainRealm = document.getElementById("mainRealm");
-        const cascades = document.querySelectorAll(".cascade");
-
-        magicWand.addEventListener("click", function (e) {
-          e.stopPropagation();
-          magicWand.classList.toggle("active");
-          mainRealm.classList.toggle("active");
-        });
-
-        cascades.forEach((cascade) => {
-          cascade.addEventListener("click", function (e) {
-            if (window.innerWidth <= 768) {
-              e.preventDefault();
-              this.classList.toggle("active");
-            }
-          });
-        });
-
-        document.addEventListener("click", function (e) {
-          if (window.innerWidth <= 768) {
-            if (
-              !mainRealm.contains(e.target) &&
-              !magicWand.contains(e.target)
-            ) {
-              mainRealm.classList.remove("active");
-              magicWand.classList.remove("active");
-              cascades.forEach((cascade) => cascade.classList.remove("active"));
-            }
-          }
-        });
-      });
-    </script>
-    <script>
-      // Intersection Observer for triggering animations when stats section is visible
-      const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
-      };
-
-      const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Start animations when section becomes visible
-            animateStats();
-            // Unobserve after triggering
-            statsObserver.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-
-      // Observe the stats section
-      const statsSection = document.querySelector(".stats");
-      statsObserver.observe(statsSection);
-
-      function animateStats() {
-        const statItems = document.querySelectorAll(".stat-item");
-
-        statItems.forEach((item, index) => {
-          // Add animation class with delay based on index
-          setTimeout(() => {
-            item.classList.add("animate");
-          }, index * 200);
-
-          const statNumber = item.querySelector("h3");
-          const target = parseInt(statNumber.getAttribute("data-target"));
-          const duration = 300; // Animation duration in milliseconds
-          const steps = 80; // Number of steps in animation
-          const stepValue = target / steps;
-          let current = 0;
-
-          const updateNumber = () => {
-            current += stepValue;
-            if (current > target) {
-              current = target;
-            }
-            // Add + symbol if target is 30 (Years of Excellence)
-            statNumber.textContent =
-              Math.floor(current) + (target === 30 ? "+" : "");
-
-            if (current < target) {
-              requestAnimationFrame(updateNumber);
-            } else {
-              // Add + symbol to numbers that need it
-              if (target === 1000) {
-                statNumber.textContent = "1000+";
-              } else if (target === 25) {
-                statNumber.textContent = "25+";
-              }
-            }
-          };
-
-          requestAnimationFrame(updateNumber);
-        });
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

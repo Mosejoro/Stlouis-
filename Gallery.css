@@ -17,6 +17,30 @@ body {
 .Head img {
   width: 8rem;
 }
+.back-link {
+  position: fixed; /* stays visible even when scrolling */
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  color: #0d6efd;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
 .gallery-title {
   text-align: center;
   font-size: 2.5rem;
@@ -172,7 +196,7 @@ body {
 
 .card .bottom .content .name {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   color: white;
   font-weight: bold;
 }
@@ -182,6 +206,7 @@ body {
   font-size: 0.9rem;
   color: white;
   margin-top: 1rem;
+  display: none;
 }
 
 .card .bottom .bottom-bottom {
@@ -348,3 +373,27 @@ body {
 }
 
 /* Gal */
+.bina-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: block;
+  width: 50px; /* size of the floating logo */
+  height: 50px;
+  border-radius: 50%; /* makes it circular if logo has a square bg */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bina-float:hover {
+  transform: scale(1.2); /* pop effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+.bina-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

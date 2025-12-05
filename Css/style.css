@@ -1375,3 +1375,27 @@ footer .wrapper svg {
   }
 }
 /* Stats */
+.bina-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: block;
+  width: 50px; /* size of the floating logo */
+  height: 50px;
+  border-radius: 50%; /* makes it circular if logo has a square bg */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bina-float:hover {
+  transform: scale(1.2); /* pop effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+.bina-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
